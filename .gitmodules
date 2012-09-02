@@ -1,0 +1,3 @@
+[submodule "eufe"]
+	path = eufe
+	url = https://github.com/mrdepth/eufe.git
