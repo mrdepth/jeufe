@@ -36,11 +36,23 @@ public class DronesList {
   }
 
   public DronesList() {
-    this(eufeJNI.new_DronesList(), true);
+    this(eufeJNI.new_DronesList__SWIG_0(), true);
+  }
+
+  public DronesList(long n) {
+    this(eufeJNI.new_DronesList__SWIG_1(n), true);
   }
 
   public long size() {
     return eufeJNI.DronesList_size(swigCPtr, this);
+  }
+
+  public long capacity() {
+    return eufeJNI.DronesList_capacity(swigCPtr, this);
+  }
+
+  public void reserve(long n) {
+    eufeJNI.DronesList_reserve(swigCPtr, this, n);
   }
 
   public boolean isEmpty() {
@@ -58,6 +70,10 @@ public class DronesList {
   public Drone get(int i) {
     long cPtr = eufeJNI.DronesList_get(swigCPtr, this, i);
     return (cPtr == 0) ? null : new Drone(cPtr, false);
+  }
+
+  public void set(int i, Drone val) {
+    eufeJNI.DronesList_set(swigCPtr, this, i, Drone.getCPtr(val), val);
   }
 
 }

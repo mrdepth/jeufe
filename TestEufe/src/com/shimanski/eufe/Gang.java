@@ -36,7 +36,7 @@ public class Gang extends Item {
   }
 
   public CharactersList getPilots() {
-    return new CharactersList(eufeJNI.Gang_getPilots(swigCPtr, this), false);
+    return new CharactersList(eufeJNI.Gang_getPilots(swigCPtr, this), true);
   }
 
   public Character addPilot() {

@@ -54,19 +54,19 @@ public class Ship extends Item {
   }
 
   public ModulesList getModules() {
-    return new ModulesList(eufeJNI.Ship_getModules(swigCPtr, this), false);
+    return new ModulesList(eufeJNI.Ship_getModules(swigCPtr, this), true);
   }
 
   public DronesList getDrones() {
-    return new DronesList(eufeJNI.Ship_getDrones(swigCPtr, this), false);
+    return new DronesList(eufeJNI.Ship_getDrones(swigCPtr, this), true);
   }
 
   public ModulesList getProjectedModules() {
-    return new ModulesList(eufeJNI.Ship_getProjectedModules(swigCPtr, this), false);
+    return new ModulesList(eufeJNI.Ship_getProjectedModules(swigCPtr, this), true);
   }
 
   public DronesList getProjectedDrones() {
-    return new DronesList(eufeJNI.Ship_getProjectedDrones(swigCPtr, this), false);
+    return new DronesList(eufeJNI.Ship_getProjectedDrones(swigCPtr, this), true);
   }
 
   public boolean canFit(Module module) {

@@ -36,11 +36,23 @@ public class StructuresList {
   }
 
   public StructuresList() {
-    this(eufeJNI.new_StructuresList(), true);
+    this(eufeJNI.new_StructuresList__SWIG_0(), true);
+  }
+
+  public StructuresList(long n) {
+    this(eufeJNI.new_StructuresList__SWIG_1(n), true);
   }
 
   public long size() {
     return eufeJNI.StructuresList_size(swigCPtr, this);
+  }
+
+  public long capacity() {
+    return eufeJNI.StructuresList_capacity(swigCPtr, this);
+  }
+
+  public void reserve(long n) {
+    eufeJNI.StructuresList_reserve(swigCPtr, this, n);
   }
 
   public boolean isEmpty() {
@@ -58,6 +70,10 @@ public class StructuresList {
   public Structure get(int i) {
     long cPtr = eufeJNI.StructuresList_get(swigCPtr, this, i);
     return (cPtr == 0) ? null : new Structure(cPtr, false);
+  }
+
+  public void set(int i, Structure val) {
+    eufeJNI.StructuresList_set(swigCPtr, this, i, Structure.getCPtr(val), val);
   }
 
 }

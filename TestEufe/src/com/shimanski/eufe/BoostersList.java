@@ -36,11 +36,23 @@ public class BoostersList {
   }
 
   public BoostersList() {
-    this(eufeJNI.new_BoostersList(), true);
+    this(eufeJNI.new_BoostersList__SWIG_0(), true);
+  }
+
+  public BoostersList(long n) {
+    this(eufeJNI.new_BoostersList__SWIG_1(n), true);
   }
 
   public long size() {
     return eufeJNI.BoostersList_size(swigCPtr, this);
+  }
+
+  public long capacity() {
+    return eufeJNI.BoostersList_capacity(swigCPtr, this);
+  }
+
+  public void reserve(long n) {
+    eufeJNI.BoostersList_reserve(swigCPtr, this, n);
   }
 
   public boolean isEmpty() {
@@ -58,6 +70,10 @@ public class BoostersList {
   public Booster get(int i) {
     long cPtr = eufeJNI.BoostersList_get(swigCPtr, this, i);
     return (cPtr == 0) ? null : new Booster(cPtr, false);
+  }
+
+  public void set(int i, Booster val) {
+    eufeJNI.BoostersList_set(swigCPtr, this, i, Booster.getCPtr(val), val);
   }
 
 }

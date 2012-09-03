@@ -36,11 +36,23 @@ public class ModulesList {
   }
 
   public ModulesList() {
-    this(eufeJNI.new_ModulesList(), true);
+    this(eufeJNI.new_ModulesList__SWIG_0(), true);
+  }
+
+  public ModulesList(long n) {
+    this(eufeJNI.new_ModulesList__SWIG_1(n), true);
   }
 
   public long size() {
     return eufeJNI.ModulesList_size(swigCPtr, this);
+  }
+
+  public long capacity() {
+    return eufeJNI.ModulesList_capacity(swigCPtr, this);
+  }
+
+  public void reserve(long n) {
+    eufeJNI.ModulesList_reserve(swigCPtr, this, n);
   }
 
   public boolean isEmpty() {
@@ -58,6 +70,10 @@ public class ModulesList {
   public Module get(int i) {
     long cPtr = eufeJNI.ModulesList_get(swigCPtr, this, i);
     return (cPtr == 0) ? null : new Module(cPtr, false);
+  }
+
+  public void set(int i, Module val) {
+    eufeJNI.ModulesList_set(swigCPtr, this, i, Module.getCPtr(val), val);
   }
 
 }

@@ -45,7 +45,7 @@ public class ControlTower extends Item {
   }
 
   public StructuresList getStructures() {
-    return new StructuresList(eufeJNI.ControlTower_getStructures(swigCPtr, this), false);
+    return new StructuresList(eufeJNI.ControlTower_getStructures(swigCPtr, this), true);
   }
 
   public boolean canFit(Structure structure) {

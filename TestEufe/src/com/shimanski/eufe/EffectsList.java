@@ -36,11 +36,23 @@ public class EffectsList {
   }
 
   public EffectsList() {
-    this(eufeJNI.new_EffectsList(), true);
+    this(eufeJNI.new_EffectsList__SWIG_0(), true);
+  }
+
+  public EffectsList(long n) {
+    this(eufeJNI.new_EffectsList__SWIG_1(n), true);
   }
 
   public long size() {
     return eufeJNI.EffectsList_size(swigCPtr, this);
+  }
+
+  public long capacity() {
+    return eufeJNI.EffectsList_capacity(swigCPtr, this);
+  }
+
+  public void reserve(long n) {
+    eufeJNI.EffectsList_reserve(swigCPtr, this, n);
   }
 
   public boolean isEmpty() {
@@ -58,6 +70,10 @@ public class EffectsList {
   public Effect get(int i) {
     long cPtr = eufeJNI.EffectsList_get(swigCPtr, this, i);
     return (cPtr == 0) ? null : new Effect(cPtr, false);
+  }
+
+  public void set(int i, Effect val) {
+    eufeJNI.EffectsList_set(swigCPtr, this, i, Effect.getCPtr(val), val);
   }
 
 }

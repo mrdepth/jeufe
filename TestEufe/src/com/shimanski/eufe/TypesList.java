@@ -36,11 +36,23 @@ public class TypesList {
   }
 
   public TypesList() {
-    this(eufeJNI.new_TypesList(), true);
+    this(eufeJNI.new_TypesList__SWIG_0(), true);
+  }
+
+  public TypesList(long n) {
+    this(eufeJNI.new_TypesList__SWIG_1(n), true);
   }
 
   public long size() {
     return eufeJNI.TypesList_size(swigCPtr, this);
+  }
+
+  public long capacity() {
+    return eufeJNI.TypesList_capacity(swigCPtr, this);
+  }
+
+  public void reserve(long n) {
+    eufeJNI.TypesList_reserve(swigCPtr, this, n);
   }
 
   public boolean isEmpty() {
@@ -57,6 +69,10 @@ public class TypesList {
 
   public int get(int i) {
     return eufeJNI.TypesList_get(swigCPtr, this, i);
+  }
+
+  public void set(int i, int val) {
+    eufeJNI.TypesList_set(swigCPtr, this, i, val);
   }
 
 }

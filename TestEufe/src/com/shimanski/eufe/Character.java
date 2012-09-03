@@ -97,11 +97,11 @@ public class Character extends Item {
   }
 
   public ImplantsList getImplants() {
-    return new ImplantsList(eufeJNI.Character_getImplants(swigCPtr, this), false);
+    return new ImplantsList(eufeJNI.Character_getImplants(swigCPtr, this), true);
   }
 
   public BoostersList getBoosters() {
-    return new BoostersList(eufeJNI.Character_getBoosters(swigCPtr, this), false);
+    return new BoostersList(eufeJNI.Character_getBoosters(swigCPtr, this), true);
   }
 
   public void setCharacterName(String characterName) {

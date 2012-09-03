@@ -36,11 +36,23 @@ public class ImplantsList {
   }
 
   public ImplantsList() {
-    this(eufeJNI.new_ImplantsList(), true);
+    this(eufeJNI.new_ImplantsList__SWIG_0(), true);
+  }
+
+  public ImplantsList(long n) {
+    this(eufeJNI.new_ImplantsList__SWIG_1(n), true);
   }
 
   public long size() {
     return eufeJNI.ImplantsList_size(swigCPtr, this);
+  }
+
+  public long capacity() {
+    return eufeJNI.ImplantsList_capacity(swigCPtr, this);
+  }
+
+  public void reserve(long n) {
+    eufeJNI.ImplantsList_reserve(swigCPtr, this, n);
   }
 
   public boolean isEmpty() {
@@ -58,6 +70,10 @@ public class ImplantsList {
   public Implant get(int i) {
     long cPtr = eufeJNI.ImplantsList_get(swigCPtr, this, i);
     return (cPtr == 0) ? null : new Implant(cPtr, false);
+  }
+
+  public void set(int i, Implant val) {
+    eufeJNI.ImplantsList_set(swigCPtr, this, i, Implant.getCPtr(val), val);
   }
 
 }

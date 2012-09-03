@@ -36,11 +36,23 @@ public class CharactersList {
   }
 
   public CharactersList() {
-    this(eufeJNI.new_CharactersList(), true);
+    this(eufeJNI.new_CharactersList__SWIG_0(), true);
+  }
+
+  public CharactersList(long n) {
+    this(eufeJNI.new_CharactersList__SWIG_1(n), true);
   }
 
   public long size() {
     return eufeJNI.CharactersList_size(swigCPtr, this);
+  }
+
+  public long capacity() {
+    return eufeJNI.CharactersList_capacity(swigCPtr, this);
+  }
+
+  public void reserve(long n) {
+    eufeJNI.CharactersList_reserve(swigCPtr, this, n);
   }
 
   public boolean isEmpty() {
@@ -58,6 +70,10 @@ public class CharactersList {
   public Character get(int i) {
     long cPtr = eufeJNI.CharactersList_get(swigCPtr, this, i);
     return (cPtr == 0) ? null : new Character(cPtr, false);
+  }
+
+  public void set(int i, Character val) {
+    eufeJNI.CharactersList_set(swigCPtr, this, i, Character.getCPtr(val), val);
   }
 
 }
